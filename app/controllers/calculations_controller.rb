@@ -17,8 +17,8 @@ class CalculationsController < ApplicationController
     # Rails stores that hash in a variable called params
     
     @user_number = params["a_number"].to_i
-    @sqrt_number = math.sqrt(@user_number)
-    # @sqrt_number = @user_number**(1/2)
+    # @sqrt_number = math.sqrt(@user_number)
+    @sqrt_number = @user_number**0.5
     
     render("calculations/flexible_sqrt_template.html.erb")
   end
@@ -57,15 +57,33 @@ class CalculationsController < ApplicationController
   end
   
   
-     def flex_rand
-    # The incoming parameters for this action look like {"a_number"=>"5"}
-    # Rails stores that hash in a variable called params
+  #   def flex_rand
+  #   # The incoming parameters for this action look like {"a_number"=>"5"}
+  #   # Rails stores that hash in a variable called params
     
   
-    @rand_number = rand(100)
+  #   @rand_number = rand(100)
     
-    render("calculations/flexible_rand_template.html.erb")
-  end
+  #   render("calculations/flexible_rand_template.html.erb")
+  # end
+  
+  
+    def flex_random
+        
+    @user_min= params["a_low_number"].to_i
+    @user_max= params["a_high_number"].to_i
+        
+      if (@user_max > @user_min)
+        puts @random_number= @user_min + rand((@user_max-@user_min))
+      
+      elsif (@user_min > @user_max)
+        puts @random_number= @user_max + rand((@user_min-@user_max))
+            
+        end
+        
+      
+      render("calculations/flexible_rand_number.html.erb")
+    end
   
   
       def square_form
@@ -93,7 +111,7 @@ class CalculationsController < ApplicationController
     # Rails stores that hash in a variable called params
     
     @user_number = params["a_number"].to_i
-    @sqrt_number = @user_number**1/2
+    @sqrt_number = @user_number**0.5
     
     render("calculations/sqrt_form_rand_template.html.erb")
   end
