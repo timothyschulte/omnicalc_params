@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
 get("/flexible/square/:a_number", { :controller => "calculations", :action => "flex_square"})
+
 get("/flexible/sqrt/:a_number", { :controller => "calculations", :action => "flex_sqrt"})
-get("/flexible/pay/:a_number", { :controller => "calculations", :action => "flex_pay"})
-get("/flexible/rand/:a_number", { :controller => "calculations", :action => "flex_rand"})
+
+get("flexible/payment/:a_interest_rate/:a_number_of_years/:a_loan_of", { :controller => "calculations", :action => "flex_payment"})
+
+get("/flexible/rand/:a_low_number/:a_high_number", { :controller => "calculations", :action => "flex_rand"})
+# get("/flexible/rand/:a_number", { :controller => "calculations", :action => "flex_rand"})
+# get("/flexible/rand/50/100", { :controller => "calculations", :action => "flex_rand"})
+
+
 
 get("/square/new", { :controller => "calculations", :action => "square_form" })
 get("/square/results", { :controller => "calculations", :action => "process_square" })
@@ -14,15 +21,17 @@ get("/square/results", { :controller => "calculations", :action => "process_squa
 get("/sqrt/new", { :controller => "calculations", :action => "sqrt_form" })
 get("/sqrt/results", { :controller => "calculations", :action => "process_sqrt" })
 
-get("/pay/new", { :controller => "calculations", :action => "pay_form" })
-get("/pay/results", { :controller => "calculations", :action => "process_pay" })
+get("/payment/new", { :controller => "calculations", :action => "payment_form" })
+get("/payment/results", { :controller => "calculations", :action => "process_payment" })
 
 get("/rand/new", { :controller => "calculations", :action => "rand_form" })
 get("/rand/results", { :controller => "calculations", :action => "process_rand" })
 
+get("/wordcount/new", { :controller => "calculations", :action => "wordcount_form" })
+get("/wordcount/results", { :controller => "calculations", :action => "process_wordcount" })
 
-
-
+get("/statistics/new", { :controller => "calculations", :action => "statistics_form" })
+get("/statistics/results", { :controller => "calculations", :action => "process_statistics" })
 
 
 get("/:username", { :controller => "users", :action => "timothyschulte"})
