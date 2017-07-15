@@ -1,40 +1,21 @@
 <h1>Word Count Calculation</h1>
 
 <form action="/wordcount/results"></a>
-<!--<form action="https://omnicalc-params-timothyschulte.c9users.io/square/results>"</a>-->
   <div>
     <label>
       Text
     </label>
-  
-    <input type="text" name="the_user_number_wordcount">
+    <textarea type="text" name="user_text" rows="3" placeholder="Enter some text"></textarea>
   </div>
+  
   <div>
     <label>
       Special word
     </label>
-  
-    <input type="text" name="the_user_number_specialword">
+    <input type="text" name="special_word" placeholder="Enter a particular word to count">
   </div>
     
   <button>Process text</button>
 </form>
 
-
-
-
-
-@text = params[:user_text]
-
-@special_word = params[:user_word]
-
-text= params[:user_text].downcase.gsub(/[^a-z0-9\s]/i, "")
-text1= params[:user_text].downcase
-
-@word_count = text.split.count
-
-@character_count_with_spaces = text1.length
-
-@character_count_without_spaces =text1.gsub(/\s+/, "").length
-
-@occurrences = text.split.count(@special_word)
+<a href="https://omnicalc-params.herokuapp.com/word_count/results?user_text=" :user_text + "&user_word=" :special_word</a>

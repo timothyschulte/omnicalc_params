@@ -1,19 +1,20 @@
 <h1>Word Count Results</h1>
 
-<h2>Text</h2>
+<h6>Text</h6>
+<p> a<%= @text %> </p>
 
 
-<h2>Word Count</h2>
+<h6>Word Count</h6>
+<p> <%= @word_count %> </p>
 
 
-<h2>Character Count (with spaces)</h2>
+<h6>Character Count (with spaces)</h6>
+<p> <%= @character_count_with_spaces %> </p>
 
 
-<h2>Character Count (without spaces)</h2>
+<h6>Character Count (without spaces)</h6>
+<p> <%= @character_count_without_spaces %> </p>
 
 
-<h2>Occurrences of XXXXX SPECIAL WORD XXXXXX</h2>
-
-
-
-<p>A <%= @user_number_yrs %> year loan of <%= @user_number_principal %>, with an annual interest rate of <%= @user_number_apr %>%, requires a monthly payment of $<%= @pay_number %>.
+<h6>Occurrences of <%= @special_word %> </h6>
+<p> <%= @occurrences %> </p>
