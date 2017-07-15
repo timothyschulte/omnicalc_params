@@ -32,9 +32,13 @@ class CalculationsController < ApplicationController
     # @user_number_yrs = params["a_number"].to_i
     # @user_number_principal = params["a_number"].to_f
     
-    @user_number_apr = params[:annual_percentage_rate].to_f
-    @user_number_yrs = params[:number_of_years].to_i
-    @user_number_principal = params[:principal_value].to_f
+    # @user_number_apr = params[:annual_percentage_rate].to_f
+    # @user_number_yrs = params[:number_of_years].to_i
+    # @user_number_principal = params[:principal_value].to_f
+    
+    @user_number_apr = params["annual_percentage_rate"].to_f
+    @user_number_yrs = params["number_of_years"].to_i
+    @user_number_principal = params["principal_value"].to_f
     
     # apr = params[:annual_percentage_rate].to_f
     # years = params[:number_of_years].to_i

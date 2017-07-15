@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 get("/flexible/square/:a_number", { :controller => "calculations", :action => "flex_square"})
 get("/flexible/sqrt/:a_number", { :controller => "calculations", :action => "flex_sqrt"})
-get("/flexible/pay/:a_number", { :controller => "calculations", :action => "flex_pay"})
+get("/flexible/pay/:apr_number/:years_number/:principal_number", { :controller => "calculations", :action => "flex_pay"})
 get("/flexible/rand/:a_number", { :controller => "calculations", :action => "flex_rand"})
 
 get("/square/new", { :controller => "calculations", :action => "square_form" })
