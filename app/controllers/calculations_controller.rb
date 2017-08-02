@@ -16,7 +16,7 @@ class CalculationsController < ApplicationController
     # The incoming parameters for this action look like {"a_number"=>"5"}
     # Rails stores that hash in a variable called params
     
-    @user_number = params["a_number"].to_i
+    @user_number = params["a_number"].to_f
     # @sqrt_number = math.sqrt(@user_number)
     @sqrt_number = @user_number**0.5
     
@@ -37,16 +37,17 @@ class CalculationsController < ApplicationController
   
    def flex_payment
         
-        @user_interest_rate= params["a_interest_rate"].to_f
+        @user_interest_rate= (params["a_interest_rate"].to_f)/100
         @number_of_years= params["a_number_of_years"].to_i
         @loan_amount= params["a_loan_of"].to_f
           apr = params["a_interest_rate"].to_f
           years = params["a_number_of_years"].to_i
           principal = params["a_loan_of"].to_f
-          monthly = apr / 12
+          monthly = (apr / 100) / 12
           months = years * 12
        
         @payment= ((monthly / 100) * principal) / (1 - (1 / ((1 + (monthly / 100)) ** months)))
+        
         
         render("calculations/flexible_payment_template.html.erb")
     end
