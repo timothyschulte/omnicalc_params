@@ -1,9 +1,17 @@
-<h1>Square Calculation</h1>
+<h1>Square Root Results</h1>
 
-<form action="/sqrt/results">
-    <div>
-        <label for="number_input">Enter a number</label>
-        <input id="number_input" type="text" name="user_number">
-    </div>
-    <button>Calculate square root</button>
-</form>
+<dl>
+  <dt>
+    Number
+  </dt>
+  <dd>
+    <%= params["user_number"] %>
+  </dd>
+
+  <dt>
+    Square Root
+  </dt>
+  <dd>
+    <%= @result %>
+  </dd>
+</dl>
