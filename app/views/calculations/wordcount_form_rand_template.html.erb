@@ -1,0 +1,21 @@
+<h1>Word Count Calculation</h1>
+
+<form action="/wordcount/results"></a>
+  <div>
+    <label>
+      Text
+    </label>
+    <textarea type="text" name="user_text" rows="3" placeholder="Enter some text"></textarea>
+  </div>
+  
+  <div>
+    <label>
+      Special word
+    </label>
+    <input type="text" name="special_word" placeholder="Enter a particular word to count">
+  </div>
+    
+  <button>Process text</button>
+</form>
+
+<a href="https://omnicalc-params.herokuapp.com/word_count/results?user_text=" :user_text + "&user_word=" :special_word</a>
